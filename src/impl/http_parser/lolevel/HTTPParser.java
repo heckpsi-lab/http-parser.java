@@ -625,17 +625,27 @@ return error(settings, "not LF", data);
             }else if(A == ch){
               method = HTTPMethod.HTTP_PATCH;
             }
-          } else if (2 == index) {
-            if(HTTPMethod.HTTP_PUT == method) {
-              if(R == ch){
-                method = HTTPMethod.HTTP_PURGE; 
-              }
-            }else if(HTTPMethod.HTTP_UNLOCK == method){
-              if(S == ch){
-                method = HTTPMethod.HTTP_UNSUBSCRIBE;
+          } else if (1 == index) {
+            if (HTTPMethod.HTTP_LINK == method) {
+              if (O == ch) {
+                method = HTTPMethod.HTTP_LOCK;
               }
             }
-          }else if(4 == index && HTTPMethod.HTTP_PROPFIND == method && P == ch){
+          } else if (2 == index) {
+            if (HTTPMethod.HTTP_PUT == method) {
+              if (R == ch) {
+                method = HTTPMethod.HTTP_PURGE;
+              }
+            }
+          } else if (3 == index) {
+            if (HTTPMethod.HTTP_UNLINK == method) {
+              if (U == ch) {
+                method = HTTPMethod.HTTP_UNSUBSCRIBE;
+              } else if (O == ch) {
+                method = HTTPMethod.HTTP_UNLOCK;
+              }
+            }
+          } else if(4 == index && HTTPMethod.HTTP_PROPFIND == method && P == ch){
             method = HTTPMethod.HTTP_PROPPATCH;
           } else {
             return error(settings, "Invalid HTTP method", data);
@@ -1721,7 +1731,7 @@ return error(settings, "unhandled state", data);
       case D: return HTTPMethod.HTTP_DELETE;
       case G: return HTTPMethod.HTTP_GET;
       case H: return HTTPMethod.HTTP_HEAD;
-      case L: return HTTPMethod.HTTP_LOCK;
+      case L: return HTTPMethod.HTTP_LINK;     /* or LOCK */
       case M: return HTTPMethod.HTTP_MKCOL;    /* or MOVE, MKACTIVITY, MERGE, M-SEARCH */
       case N: return HTTPMethod.HTTP_NOTIFY;
       case O: return HTTPMethod.HTTP_OPTIONS;
@@ -1729,7 +1739,7 @@ return error(settings, "unhandled state", data);
       case R: return HTTPMethod.HTTP_REPORT;
       case S: return HTTPMethod.HTTP_SUBSCRIBE;
       case T: return HTTPMethod.HTTP_TRACE;
-      case U: return HTTPMethod.HTTP_UNLOCK; /* or UNSUBSCRIBE */
+      case U: return HTTPMethod.HTTP_UNLINK; /* or UNSUBSCRIBE, UNLOCK */
     }
     return null; // ugh.
   }

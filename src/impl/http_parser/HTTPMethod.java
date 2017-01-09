@@ -62,10 +62,6 @@ public enum HTTPMethod {
     else if ("PUT".equalsIgnoreCase(s))          {return HTTP_PUT;}
     else if ("HTTP_PATCH".equalsIgnoreCase(s))   {return HTTP_PATCH;}
     else if ("PATCH".equalsIgnoreCase(s))        {return HTTP_PATCH;}
-    else if ("HTTP_LINK".equalsIgnoreCase(s))    {return HTTP_LINK;}
-    else if ("LINK".equalsIgnoreCase(s))         {return HTTP_LINK;}
-    else if ("HTTP_UNLINK".equalsIgnoreCase(s))  {return HTTP_UNLINK;}
-    else if ("UNLINK".equalsIgnoreCase(s))       {return HTTP_UNLINK;}
     else if ("HTTP_CONNECT".equalsIgnoreCase(s)) {return HTTP_CONNECT;}
     else if ("CONNECT".equalsIgnoreCase(s))      {return HTTP_CONNECT;}
     else if ("HTTP_OPTIONS".equalsIgnoreCase(s)) {return HTTP_OPTIONS;}
@@ -74,6 +70,8 @@ public enum HTTPMethod {
     else if ("TRACE".equalsIgnoreCase(s))        {return HTTP_TRACE;}
     else if ("HTTP_COPY".equalsIgnoreCase(s))    {return HTTP_COPY;}
     else if ("COPY".equalsIgnoreCase(s))         {return HTTP_COPY;}
+    else if ("HTTP_LINK".equalsIgnoreCase(s))    {return HTTP_LINK;}
+    else if ("LINK".equalsIgnoreCase(s))         {return HTTP_LINK;}
     else if ("HTTP_LOCK".equalsIgnoreCase(s))    {return HTTP_LOCK;}
     else if ("LOCK".equalsIgnoreCase(s))         {return HTTP_LOCK;}
     else if ("HTTP_MKCOL".equalsIgnoreCase(s))   {return HTTP_MKCOL;}
@@ -84,6 +82,8 @@ public enum HTTPMethod {
     else if ("PROPFIND".equalsIgnoreCase(s))     {return HTTP_PROPFIND;}
     else if ("HTTP_PROPPATCH".equalsIgnoreCase(s)){return HTTP_PROPPATCH;}
     else if ("PROPPATCH".equalsIgnoreCase(s))    {return HTTP_PROPPATCH;}
+    else if ("HTTP_UNLINK".equalsIgnoreCase(s))  {return HTTP_UNLINK;}
+    else if ("UNLINK".equalsIgnoreCase(s))       {return HTTP_UNLINK;}
     else if ("HTTP_UNLOCK".equalsIgnoreCase(s))  {return HTTP_UNLOCK;}
     else if ("UNLOCK".equalsIgnoreCase(s))       {return HTTP_UNLOCK;}
     else if ("HTTP_REPORT".equalsIgnoreCase(s)) {return HTTP_REPORT;}
