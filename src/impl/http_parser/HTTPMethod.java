@@ -9,6 +9,8 @@ public enum HTTPMethod {
   , HTTP_POST("POST")
   , HTTP_PUT("PUT")
   , HTTP_PATCH("PATCH")
+  , HTTP_LINK("LINK")
+  , HTTP_UNLINK("UNLINK")
   /* pathological */
   , HTTP_CONNECT("CONNECT")
   , HTTP_OPTIONS("OPTIONS")
@@ -60,6 +62,10 @@ public enum HTTPMethod {
     else if ("PUT".equalsIgnoreCase(s))          {return HTTP_PUT;}
     else if ("HTTP_PATCH".equalsIgnoreCase(s))   {return HTTP_PATCH;}
     else if ("PATCH".equalsIgnoreCase(s))        {return HTTP_PATCH;}
+    else if ("HTTP_LINK".equalsIgnoreCase(s))    {return HTTP_LINK;}
+    else if ("LINK".equalsIgnoreCase(s))         {return HTTP_LINK;}
+    else if ("HTTP_UNLINK".equalsIgnoreCase(s))  {return HTTP_UNLINK;}
+    else if ("UNLINK".equalsIgnoreCase(s))       {return HTTP_UNLINK;}
     else if ("HTTP_CONNECT".equalsIgnoreCase(s)) {return HTTP_CONNECT;}
     else if ("CONNECT".equalsIgnoreCase(s))      {return HTTP_CONNECT;}
     else if ("HTTP_OPTIONS".equalsIgnoreCase(s)) {return HTTP_OPTIONS;}
